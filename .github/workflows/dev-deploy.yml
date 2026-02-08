@@ -1,0 +1,15 @@
+name: Deploy DEV Backend
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Render DEV deploy
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEV_DEPLOY_HOOK }}

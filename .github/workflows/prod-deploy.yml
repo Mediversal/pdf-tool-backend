@@ -1,0 +1,15 @@
+name: Deploy PROD Backend
+
+on:
+  push:
+    branches:
+      - prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Render PROD deploy
+        run: |
+          curl -X POST ${{ secrets.RENDER_PROD_DEPLOY_HOOK }}
