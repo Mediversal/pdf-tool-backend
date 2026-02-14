@@ -274,6 +274,7 @@ class PdfController {
       success: true,
       data: operations,
       correlationId: req.correlationId,
+      message: "Operation history retrieved successfully"
     });
   });
 
