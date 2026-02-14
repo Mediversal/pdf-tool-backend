@@ -180,7 +180,7 @@ class PdfController {
 
     res.status(200).json({
       success: true,
-      message: "Watermark added successfully",
+      message: "Watermark added successfully.",
       data: result,
       correlationId: req.correlationId,
     });
