@@ -22,7 +22,9 @@ const PORT = process.env.PORT || 5000;
 // Security middleware
 app.use(helmet());
 app.use(cors({
-  origin: "*", // Allow all origins (adjust in production)
+  origin: [
+    "https://doc-to-any.vercel.app"
+  ], // Allow all origins (adjust in production)
   credentials: true
 }));
 
@@ -78,7 +80,7 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   logger.info(`🚀 Server running on port ${PORT}`);
   logger.info(`📝 Environment: ${process.env.NODE_ENV || "development"}`);
-  logger.info(`🌐 CORS enabled for: ${process.env.FRONTEND_URL || "http://localhost:3000"}`);
+  logger.info(`🌐 CORS enabled for: ${process.env.FRONTEND_URL || "https://doc-to-any.vercel.app"}`);
 });
 
 // Graceful shutdown
